@@ -10,7 +10,7 @@ router = APIRouter(
     prefix='/api/answer'
 )
 
-@router.post("/create/{question_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.post("/create/{question_id}", status_code=status.HTTP_204_NO_CONTENT) # 리턴 값이 없어서 204로
 def answer_create(question_id: int, _answer_create: answer_schema.AnswerCreate, db: Session = Depends(get_db)):
     question = question_crud.get_question(db, question_id=question_id)
     if not question:
