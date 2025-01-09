@@ -10,7 +10,7 @@
     let email = ''
 
     function post_user(event) {
-        event.preventDefalut()
+        event.preventDefault()
         let url = "/api/user/create"
         let params = {
             username: username,
